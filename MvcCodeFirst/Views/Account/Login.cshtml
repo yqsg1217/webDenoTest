@@ -1,0 +1,23 @@
+﻿@{
+    Layout = "~/View/Shared/_layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/Content/css/bootstrap.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        @Html.BeginForm("Login", "Account", FormMethod.Post)
+        {
+        <label>用户名：</label><input type="text" name="username" id="username" />
+        <label>密码：</label><input type="password" name="password" id="password" />
+        记住我:<input type="checkbox"  name="RememberMe"/>
+        }
+    </div>
+</body>
+</html>

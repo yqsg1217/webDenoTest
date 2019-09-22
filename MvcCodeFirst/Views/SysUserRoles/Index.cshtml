@@ -1,0 +1,53 @@
+﻿@model IEnumerable<MvcCodeFirst.Models.SysUserRole>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SysRole.RoleName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SysUser.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SysUser.CreateDate)
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SysRole.RoleName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SysUser.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SysUser.CreateDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+                @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+            </td>
+        </tr>
+    }
+    
+    </table>
+</body>
+</html>
